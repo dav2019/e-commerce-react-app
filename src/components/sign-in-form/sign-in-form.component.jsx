@@ -5,12 +5,12 @@ import Button from "../button/button.component";
 
 import { signInWithGooglePopup, createUserDocumentFromAuth, signInAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
 
-import "../sign-in-form/sign-in-form.styles.scss"
+import "./sign-in-form.styles.scss"
 
 const defaultFormFields = {
     email: '',
     password: '',
-}
+};
 
 const SignInForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
@@ -33,7 +33,18 @@ const SignInForm = () => {
             console.log(response)
             resetFormFields();
 
-        } catch(error) {}
+        } catch(error) {
+            switch(error.code) {
+                case 'auth/wrong-password':
+                    alert('incorect password for email');
+                    break
+                case 'auth/user-not-found':
+                    alert('no user associated with this email');
+                    break
+                default:
+                    console.log(error)
+            }      
+        }
         
 
     };
@@ -54,7 +65,7 @@ const SignInForm = () => {
                 <FormInput label="Password" type="password" required onChange={handleChange} name="password" value={password}/>
                 <div className="buttons-cointainer">
                     <Button type="submit">Sign In</Button>
-                    <Button buttonType='google' onClick={signInWithGoogle}>Google Sign In</Button>
+                    <Button type='button' buttonType='google' onClick={signInWithGoogle}>Google Sign In</Button>
                 </div>
             </form>
         </div>
