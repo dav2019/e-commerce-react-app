@@ -20,10 +20,10 @@ import {
 const firebaseConfig = {
     apiKey: `${process.env.REACT_APP_API_KEY}`,
     authDomain: `${process.env.REACT_APP_AUTH_DOMAIN}`,
-    projectId: "d-clothing-41ef8",
-    storageBucket: "d-clothing-41ef8.appspot.com",
-    messagingSenderId: "68183893475",
-    appId: "1:68183893475:web:ae198ea46e91b5eb80ecd6"
+    projectId: "e-commerce-db-a78c5",
+    storageBucket: "e-commerce-db-a78c5.appspot.com",
+    messagingSenderId: "313444753659",
+    appId: "1:313444753659:web:b109908e7fe5bac236505e"
 };
   
 
@@ -39,7 +39,7 @@ googleProvider.setCustomParameters({
 
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
-export const signInWithGoogleRedirect = () => signInWithGoogleRedirect(auth, googleProvider);
+export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleProvider);
 
 export const db = getFirestore();
 

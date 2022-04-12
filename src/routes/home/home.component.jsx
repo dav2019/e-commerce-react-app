@@ -1,13 +1,15 @@
-import Directory from "../../components/directory/directory.component";
+import { Outlet } from "react-router-dom";
 
+import Directory from "../../components/directory/directory.component";
+import CPU from "../../assets/homepage/cpu.jpg";
 
 const Home = () => {
 
   const categories = [
     {
       "id": 1,
-      "title": "hats",
-      "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
+      "title": "CPU",
+      "imageUrl": `${CPU}`
     },
     {
       "id": 2,
@@ -31,7 +33,12 @@ const Home = () => {
     }
   ]
 
-  return <Directory categories={categories} />;
+  return (
+    <div>
+      <Directory categories={categories} />
+      <Outlet />
+    </div>
+  )
   
 };
 
