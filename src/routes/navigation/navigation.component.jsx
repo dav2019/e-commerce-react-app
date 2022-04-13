@@ -22,7 +22,8 @@ const Navigation = () => {
       <Fragment>
         <div className="navigation">
           <Link className="logo-container" to='/'>
-            <Logo className="logo" />
+            {/* <Logo className="logo" /> */}
+            <h2>CUSTOM PC</h2>
           </Link> 
           <div className="nav-links-container">
             <Link className="nav-link" to='/shop'>

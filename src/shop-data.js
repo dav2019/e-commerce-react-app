@@ -1,3 +1,5 @@
+import CPU from './assets/homepage/cpu.jpg'
+
 const SHOP_DATA = [
   {
     title: 'Hats',
