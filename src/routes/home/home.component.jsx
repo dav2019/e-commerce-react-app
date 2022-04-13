@@ -15,7 +15,7 @@ const Home = () => {
   const categories = [
     {
       "id": 1,
-      "title": "CPU",
+      "title": "CPUs",
       "imageUrl": `${CPU}`
     },
     {
