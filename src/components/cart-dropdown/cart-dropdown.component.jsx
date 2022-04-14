@@ -18,6 +18,7 @@ const CartDropdown = () => {
 
     return (
       <CartDropdownContainer>
+        <br />
         <CartItems>
         {cartItems.length ? (
           cartItems.map((item) => (
