@@ -11,7 +11,7 @@ import './category.styles.scss'
 const Category = () => {
     const { category } = useParams();
     // const { categoriesMap } = useContext(CategoriesContext);
-    console.log('render/re-rendering category component');
+    // console.log('render/re-rendering category component');
     const categoriesMap = useSelector(selectCategoriesMap);
     const [products, setProducts] = useState(categoriesMap[category]);
 
