@@ -15,7 +15,13 @@ export const selectCategoriesMap = createSelector(
             acc[title.toLowerCase()] = items;
             return acc;
     }, {})
-)
+);
+
+export const selectCategoriesIsLoading = createSelector(
+    [selectCategoryReducer],
+    (categoriesSlice) => categoriesSlice.isLoading
+);
+
 
 // (state) => {
 //     console.log('selector fired');
